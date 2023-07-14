@@ -11,9 +11,10 @@ function App() {
   const ratesRef = useRef({});
 
   // https://api.exchangerate.host/latest.json 
+  // https://cdn.cur.su/api/latest.json
 
   useEffect(() => {
-    fetch('https://cdn.cur.su/api/latest.json') 
+    fetch('https://api.exchangerate.host/latest.json') 
       .then((res) => res.json())
       .then((json) => {
         ratesRef.current = json.rates;
